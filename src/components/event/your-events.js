@@ -58,6 +58,7 @@ export default class YourEvents extends Component{
                         <p>Loading...</p>:
                         <EvenTable data={this.state.eventsData}
                             refresh={this.getEvents.bind(this)}
+                            showActions={true}
                         />
                     }
                 </div>

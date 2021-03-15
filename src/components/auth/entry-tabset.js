@@ -144,9 +144,9 @@ class EntryTabset extends Component {
                                 <div className="form-group">
                                     <input required={true} name="password" type="password" className="form-control" placeholder="Password" minLength={8} maxLength={16} id="password"/>
                                 </div>
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <input required={true} name="password" type="password" className="form-control" placeholder="Confirm Password" minLength={8} maxLength={16}/>
-                                </div>
+                                </div> */}
                                 <div className="form-terms">
                                     <div className="custom-control custom-checkbox mr-sm-2">
                                         <input type="checkbox" className="custom-control-input" id="customControlAutosizing" />

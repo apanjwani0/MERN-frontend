@@ -20,6 +20,7 @@ export default class YourEvents extends Component{
                     validUpdates={['address','startDate','description','title','endDate','startTime','endTime','isOpen','bookingLink','capacity']}
                     refresh={this.props.refresh.bind(this)}
                     topic={'events'}
+                    showActions={this.props.showActions}
                 />
             </div>
         )

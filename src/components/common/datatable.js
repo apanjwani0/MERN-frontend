@@ -26,7 +26,7 @@ export class Datatable extends Component {
     updateAndSave(url,updatedData,index,_callback){
         console.log(url,updatedData,index)
         const jwtToken = localStorage.getItem("JWT");
-        axios.post(url,updatedData,
+        axios.patch(url,updatedData,
             {headers:{'Authorization':`Bearer ${jwtToken}`,
         }}).then((res)=>{
             res=res.data
@@ -37,6 +37,7 @@ export class Datatable extends Component {
             if(!res.success){
                 console.error(res.error,res.message)
                 console.log(this.state)
+                toast.error(res.message)
             }else{
                 console.log(res)
                 console.log(res.result)
@@ -66,6 +67,7 @@ export class Datatable extends Component {
                 this.setState({
                     delete:{success:res.success,message:res.message}
                 })
+                toast.error(res.message)
             }else{
                 console.log(res)
                 console.log(res.result)
@@ -75,7 +77,7 @@ export class Datatable extends Component {
             }
             _callback();
         }).catch(err=>{
-            console.error(err)
+            console.error(err.message)
             _callback();
         })
     }
@@ -139,7 +141,7 @@ export class Datatable extends Component {
     }
 
     render() {
-        const { pageSize, myClass, multiSelectOption, pagination ,updateUrl,validUpdates} = this.props;
+        const { pageSize, myClass, multiSelectOption, pagination ,updateUrl,validUpdates,showActions} = this.props;
         const { tableData } = this.state
         console.log(tableData)
 
@@ -152,7 +154,7 @@ export class Datatable extends Component {
             if(validUpdates.includes(key)){
                 editable=this.renderEditable
             }
-            if(key === "__v" || key === "updatedAt" || key==="createdAt"){
+            if(key === "__v" || key === "updatedAt" || key==="createdAt" ||key==="_id"){
                 show=false;
             }
             // if(key ==="image"){
@@ -208,7 +210,7 @@ export class Datatable extends Component {
                     }
                 }
             )
-        } else {
+        } else if(showActions){
             columns.push(
                 {
                     Header: <b>Action</b>,
