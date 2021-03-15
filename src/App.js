@@ -6,8 +6,6 @@ import Sidebar from './components/common/sidebar_components/sidebar';
 import Footer from './components/common/footer';
 
 export class App extends Component{
-
-
   render(){
     return (
       <userContext.Consumer>

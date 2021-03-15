@@ -24,7 +24,7 @@ class Root extends Component{
     this.state={
       isLoggedIn:false,
       profileData:{},
-      loading:true,
+      loading:false,
       togglelogin:this.togglelogin
     }
     this.handleLogout = this.handleLogout.bind(this)

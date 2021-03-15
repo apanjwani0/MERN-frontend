@@ -15,15 +15,13 @@ class Entry extends Component{
             <Fragment>
                 <div className="page-wrapper">
                     <div className="authentication-box">
-                        <div className="container">
-                                <div className="col-md-7 p-0 card-right">
+                        
                                     <div className="card tab2-card">
                                         <div className="card-body">
                                              <EntryTabset togglelogin={this.props.togglelogin.bind(this)}/> 
                                         </div>
                                     </div>
-                                </div>
-                        </div>
+                               
                     </div>
                 </div>
             </Fragment>

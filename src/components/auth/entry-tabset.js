@@ -113,9 +113,9 @@ class EntryTabset extends Component {
                                         <label className="d-block">
                                                     <input className="checkbox_animated" id="chk-ani2" type="checkbox" />
                                                         Remember Me
-                                                    <span className="pull-right">
+                                                    {/* <span className="pull-right">
                                                         <a href="#" className="btn btn-default forgot-pass p-0">Forgot your password</a>
-                                                    </span>
+                                                    </span> */}
                                         </label>
                                     </div>
                                 </div>
